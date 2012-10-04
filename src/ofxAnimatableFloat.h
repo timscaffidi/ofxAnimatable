@@ -22,7 +22,8 @@ class ofxAnimatableFloat : public ofxAnimatable{
 		void animateTo( float newVal );
 		void animateToAfterDelay( float newVal, float delay );
 		void animateToIfFinished( float newVal );	///starts new animation to newVal only if there isnt an anim going on
-		void animateFromTo( float originalValue, float destinationValue );
+        void animateFromTo( float originalValue, float destinationValue );
+        void animateFromToOffset( float originalValue, float destinationValue, float offset);
 
         void set(float f){
             originalVal_ = targetVal_ = targetTempVal_ = f;

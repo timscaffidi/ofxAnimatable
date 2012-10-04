@@ -55,6 +55,14 @@ void ofxAnimatableFloat::animateFromTo( float originalValue, float destinationVa
 	targetVal_ = destinationValue;
 }
 
+void ofxAnimatableFloat::animateFromToOffset( float originalValue, float destinationValue, float offset){
+    ofxAnimatable::startAnimation();
+	
+	originalVal_ = originalValue;
+	targetVal_ = destinationValue;
+    percentDone_ = (offset - originalVal_)/( targetVal_ - originalVal_ );
+}
+
 
 void ofxAnimatableFloat::animateToIfFinished( float newVal ){
 	if ( animating_ == false ){
